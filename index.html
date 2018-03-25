@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>NerdsBlog - Card Builder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body class="bg-secondary">
+
+    <nav class="p-3 bg-dark">
+      <a href="https://www.facebook.com/nerdsblog/" class="text-white">@NerdsBlog on Facebook</a> <span class="text-danger">|</span>
+      <a href="https://www.github.com/nerdsblog/" class="text-white">Nerds Blog on GitHub</a>
+    </nav><div class="m-3"></div>
+
+
+      <div class="container rounded bg-light" style="min-height:85vh;">
+        <div class="row">
+          <div class="col-md-12 p-3">
+            <h1 class="display-3">Base 64 Encoder/Decoder</h1>
+            <button onclick="update()" data-toggle="tooltip" data-html="true" id="convert" data-placement="bottom" title="Encodes/Decodes based on what's in each field" class="btn btn-primary">Encode</button>
+            <button onclick="clearfields()" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<b class='text-danger'>WARNING!</b><br /> Can not be undone" class="btn btn-outline-danger">Clear all fields</button>
+            <br>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="toggle">
+              <label class="form-check-label" for="toggle">Toggle Encode/Decode</label>
+              <h4 id="showencodedecode" style="font-weight:bold;"><span class="text-success">Encode Mode</span></h4>
+            </div>
+
+
+          </div>
+          <div class="col-md-6 p-4">
+
+            <label for="plaintext">Input / Output plain text</label>
+            <textarea class="form-control" id="plaintext" style="min-height:300px;" placeholder="Input / Output plain text"></textarea>
+
+          </div>
+          <div class="col-md-6 p-4">
+
+            <label for="base64">Input / Output base64 (Must be valid base64)</label>
+            <textarea class="form-control" id="base64" disabled style="min-height:300px;" placeholder="Input / Output base64"></textarea>
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="modal fade" id="ErrorModal" tabindex="-1" role="dialog" aria-labelledby="ErrorModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-danger" id="ErrorModal">ERROR!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Error (Might be an invalid base64 string in field?)<br />
+                <h5>Error:</h5>
+                <span id="modalerrorfield"></span>
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="m-5"></div><nav class="p-3 bg-dark">
+      <a href="https://www.facebook.com/nerdsblog/" class="text-white">@NerdsBlog on Facebook</a> <span class="text-danger">|</span>
+      <a href="https://www.github.com/nerdsblog/" class="text-white">Nerds Blog on GitHub</a>
+    </nav>
+  </body>
+  <script src="jquery-3.3.1.min.js" charset="utf-8"></script>
+  <script src="popper.min.js" charset="utf-8"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" charset="utf-8"></script>
+  <script src="index.js" charset="utf-8"></script>
+</html>
